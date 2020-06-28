@@ -29,3 +29,30 @@ class Sorter():
 			self.array[j] = value
 
 		return self.array
+
+	def selectionSort(self):
+		"""Function to sort an array using selection sort
+		algorithm.
+
+		Args:
+			None
+		Returns:
+			list: sorted array
+		"""
+		for i in range(len(self.array) - 1):
+			min = i
+
+			for j in range(i+1, len(self.array)):
+				if self.array[j] < self.array[min]:
+					min = j
+			self._swap(min, i)
+
+
+
+		return self.array
+
+	def _swap(self, i, j):
+		temp = self.array[i]
+		self.array[i] = self.array[j]
+		self.array[j] = temp
+
